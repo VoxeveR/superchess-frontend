@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Client } from "@stomp/stompjs";
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function StarterPage() {
     const [nickname, setNickname] = useState("");
@@ -70,7 +70,7 @@ function StarterPage() {
     return (
         <>
             <h1>Super Chess</h1>
-
+            <button className={"bg-emerald-800 hover:bg-emerald-950 text-white font-bold border rounded-2xl py-2 padding"}><Link to={"/login"}>LoginPage</Link></button>
             <input
                 placeholder="Type nickname"
                 onChange={(e) => setNickname(e.target.value)}

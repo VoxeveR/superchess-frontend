@@ -1,4 +1,4 @@
-import ChessBoard from "./chess/ChessBoard.tsx";
+import ChessBoard from "../chess/ChessBoard.tsx";
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 
