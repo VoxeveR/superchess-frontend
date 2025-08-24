@@ -22,6 +22,8 @@ const DraggableChessPawn = ({ pawn, size, position, mirror }: DraggableChessPawn
       const frameID = useRef(0);
 
       useEffect(() => {
+            document.body.classList.add('overflow-hidden');
+
             if (block.current) {
                   block.current.style.left = `${position.x}%`;
                   block.current.style.top = `${position.y}%`;
@@ -75,14 +77,13 @@ const DraggableChessPawn = ({ pawn, size, position, mirror }: DraggableChessPawn
       return (
             <div
                   ref={block}
-                  className={`absolute z-100 h-${size} invisible select-none lg:visible`}
+                  className={`invisible absolute z-100 h-${size} w-${size} select-none 2xl:visible`}
                   style={{
-                        position: 'absolute',
-                        transform: 'translate(-50%, -50%)', // center pawn relative to position
+                        transform: 'translate(-50%, -50%)',
                   }}
                   unselectable={'on'}
             >
-                  <img alt='flying-pawn' src={`/assets/flyingpawns/${pawn}.svg`} className={`${mirror ? 'rotate-y-180' : ''} h-full`} unselectable={'on'} draggable={'false'} />
+                  <img alt='flying-pawn' src={`/assets/flyingpawns/${pawn}.svg`} className={`${mirror ? 'rotate-y-180' : ''} h-full w-full`} unselectable={'on'} draggable={'false'} />
                   <div className={'pawn absolute inset-0 h-full cursor-pointer'} onMouseDown={handleMouseDown} />
             </div>
       );
