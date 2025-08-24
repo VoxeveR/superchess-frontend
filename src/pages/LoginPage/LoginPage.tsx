@@ -13,11 +13,11 @@ const LoginPage = () => {
       const auth = useAuth();
 
       const googleButtonHandler = () => {
-            window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+            window.open('http://localhost:8080/oauth2/authorization/google', '', 'width=800,height=800');
       };
 
       const facebookButtonHandler = () => {
-            window.location.href = 'http://localhost:8080/oauth2/authorization/facebook';
+            window.open('http://localhost:8080/oauth2/authorization/facebook', '', 'width=800,height=800');
       };
 
       const classicLoginHandler = async (e: React.FormEvent<HTMLFormElement>) => {
