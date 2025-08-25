@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 type viewport = {
-      x: number; // percentage of parent width
-      y: number; // percentage of parent height
+      x: number;
+      y: number;
 };
 
 type DraggableChessPawnProps = {
@@ -77,7 +77,7 @@ const DraggableChessPawn = ({ pawn, size, position, mirror }: DraggableChessPawn
       return (
             <div
                   ref={block}
-                  className={`invisible absolute z-100 h-${size} w-${size} select-none 2xl:visible`}
+                  className={`invisible absolute z-100 w-${size} select-none 2xl:visible`}
                   style={{
                         transform: 'translate(-50%, -50%)',
                   }}
